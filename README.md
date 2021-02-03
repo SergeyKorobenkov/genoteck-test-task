@@ -15,38 +15,18 @@ GET/POST https://functions.yandexcloud.net/d4e0b5a386mtqeocbs5t
 }
 ```
 
-
-## How to create new function by API:
-
-1) Look for Clouds where you can create new function, do request with Bearer Auth-Token:
+## How to deploy function to your Folder in Cloud
+1. Copy this repo to your local machine.
+2. Install **yc CLI utils** and choose your working folder. You can read more about this here:
 ```
-GET https://resource-manager.api.cloud.yandex.net/resource-manager/v1/clouds
+https://cloud.yandex.ru/docs/cli/quickstart#install
 ```
-
-2) Look for Folders in Cloud where you can create new function. Do request with Bearer Auth-Token (Required cloudId as query-parameter):
+3. Make the **deploy.sh** executable:
 ```
-GET https://resource-manager.api.cloud.yandex.net/resource-manager/v1/folders
+sudo chmod +x deploy.sh
 ```
-
-3) Create your function. Do request with Bearer Auth-Token:
+4. Run **deploy.sh** by using command:
 ```
-POST https://serverless-functions.api.cloud.yandex.net/functions/v1/functions
+./deploy.sh
 ```
-Required next parameters in request-body:
-```
-{
-  "folderId": "string",
-  "name": "string",
-  "description": "string",
-  "labels": "object"
-}
-```
-
-### You can recieve your Bearer Auth-Token with this command:
-```
-curl -d "{\"yandexPassportOauthToken\":\"<IAM-TOKEN>\"}" "https://iam.api.cloud.yandex.net/iam/v1/tokens"
-```
-### How to find your IAM-TOKEN:
-```
-https://cloud.yandex.ru/docs/iam/concepts/authorization/iam-token
-```
+5. And its done. Congratulations, you just create your new Cloud Function for create preview from base image. Enjoy!
