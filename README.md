@@ -1,11 +1,11 @@
 ## Genoteck test-task
-This repo created for test-task for Genoteck company.
+Тестовое задания для компании Genoteck. Создание Cloud Function в сервисе Yandex.Cloud, для переработки изображение в превью размерами 65х65, возвращаемое в формате base64.
 
-## Link to cloud function:
+## Ссылка на развернутую функцию:
 ```
 GET/POST https://functions.yandexcloud.net/d4e0b5a386mtqeocbs5t
 ```
-### Required request-body:
+### Формат тела запроса при обращении к функции (application/json): 
 
 ```
 {
@@ -15,18 +15,18 @@ GET/POST https://functions.yandexcloud.net/d4e0b5a386mtqeocbs5t
 }
 ```
 
-## How to deploy function to your Folder in Cloud
-1. Copy this repo to your local machine.
-2. Install **yc CLI utils** and choose your working folder. You can read more about this here:
+## Как развернуть функцию в Yandex.Cloud
+1. Склонируйте данный репозиторий.
+2. Установите и сконфигурируйте **yc CLI утилиту**. Подробнее о том как это делается можно почиать тут:
 ```
 https://cloud.yandex.ru/docs/cli/quickstart#install
 ```
-3. Make the **deploy.sh** executable:
+3. Сделайте файл **deploy.sh** исполняемым:
 ```
 sudo chmod +x deploy.sh
 ```
-4. Run **deploy.sh** by using command:
+4. Запустите **deploy.sh**:
 ```
 ./deploy.sh
 ```
-5. And its done. Congratulations, you just create your new Cloud Function for create preview from base image. Enjoy!
+5. Готово, теперь вы обладатель новой Cloud Function!
